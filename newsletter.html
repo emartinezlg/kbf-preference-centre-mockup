@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gérer mes e-news | Fondation Roi Baudouin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Taviraj:wght@300;400&display=swap">
+  <link rel="stylesheet" href="assets/pc.css">
+</head>
+<body>
+
+  <div class="presenter">
+    <div class="wrap">
+      <div class="presenter__left">
+        <span class="presenter__flag" data-i18n="mockup"></span>
+        <a href="index.html" data-home data-i18n="allMockups"></a>
+      </div>
+      <button type="button" class="notes-toggle" aria-pressed="false">Model notes <kbd>N</kbd></button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#"><img src="assets/logos/logo-fr-50y.svg" alt="Fondation Roi Baudouin" width="157" height="64"></a>
+      <ul class="langs"></ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <h1 data-i18n="h1"></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <p class="note">Opened from the “manage my e-news” link in every e-news footer. Today the MARKE page
+          identifies the person by email + <code>MD5(ContactId)</code>; here the link carries a signed,
+          expiring token for the ContactId. Hosted as a CloudPage on <code>cloud.email.kbs-frb.be</code>.</p>
+      </div>
+      <div class="id-card">
+        <dl>
+          <div>
+            <dt data-i18n="email"></dt>
+            <dd>marie.lambert@example.be</dd>
+          </div>
+          <div>
+            <dt data-i18n="lastChange"></dt>
+            <dd id="last-change"></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="wrap">
+      <div class="col">
+
+        <div class="status" id="optout" tabindex="-1" hidden>
+          <div>
+            <strong data-i18n="outTitle"></strong>
+            <p data-i18n="outHelp"></p>
+          </div>
+          <button type="button" class="btn" id="resub-btn" data-i18n="resubBtn"></button>
+        </div>
+
+        <fieldset id="prefs">
+          <section class="section" aria-labelledby="edition-title">
+            <div class="section__head">
+              <h2 id="edition-title" data-i18n="editionTitle"></h2>
+              <p data-i18n="editionHelp"></p>
+            </div>
+            <ul class="pills" id="editions" role="radiogroup" aria-labelledby="edition-title"></ul>
+            <p class="note">Stored as the language of each Comm Subscription Consent. The topics offered follow
+              the editions that exist per language today, as on the website sign-up form: 14 in French and
+              Dutch, 5 in English, <em>KBS Ostbelgien</em> in German. Europe and Biomedical research are
+              English editions.</p>
+          </section>
+
+          <section class="section" id="topics" aria-labelledby="topics-title">
+            <div class="section__head">
+              <h2 id="topics-title" data-i18n="topicsTitle"></h2>
+              <p data-i18n="topicsHelp"></p>
+            </div>
+            <p class="count" id="topic-count" aria-live="polite"></p>
+            <p class="notice" id="dropped" role="status" hidden></p>
+            <ul class="topics" id="topic-list" style="margin-top:16px"></ul>
+            <p class="note">One switch is one Comm Subscription (14 topics, Email channel). Saving writes a
+              Comm Subscription Consent per changed topic: status, date, source “Preference centre”,
+              language. The hourly audience queries read these records instead of the MARKE events.</p>
+          </section>
+        </fieldset>
+
+        <section class="section">
+          <details class="history" id="history">
+            <summary data-i18n="historyTitle"></summary>
+            <ol id="history-list"></ol>
+          </details>
+          <p class="note">Read from the consent records: who agreed to what, when, and through which channel.
+            The same data answers an audit or an access request, without going through the MARKE events.</p>
+        </section>
+
+        <section class="section" id="leave">
+          <div class="panel panel--split">
+            <div>
+              <h3 data-i18n="leaveTitle"></h3>
+              <p data-i18n="leaveBody"></p>
+            </div>
+            <button type="button" class="btn btn--danger" id="leave-btn" data-i18n="leaveBtn"></button>
+          </div>
+          <p class="note">Sets the Contact Point Type Consent for the purpose <em>Newsletters</em> (Email) to
+            OptOut. Press relations is a separate purpose, so press releases continue for a journalist who
+            leaves the e-news, and the reverse. The inbox one-click unsubscribe should write the same record;
+            today it only ticks <em>Email Opt Out</em>, and 403 contacts still count as subscribed.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <strong data-i18n="org"></strong>
+        <span data-i18n="address"></span>
+      </div>
+      <ul>
+        <li><a href="#" data-i18n="privacy"></a></li>
+        <li><a href="#" data-i18n="contact"></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/pc.js"></script>
+  <script src="assets/newsletter.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Mes e-mails internes | Fondation Roi Baudouin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Taviraj:wght@300;400&display=swap">
+  <link rel="stylesheet" href="assets/pc.css">
+</head>
+<body>
+
+  <div class="presenter">
+    <div class="wrap">
+      <div class="presenter__left">
+        <span class="presenter__flag" data-i18n="mockup"></span>
+        <a href="index.html" data-home data-i18n="allMockups"></a>
+      </div>
+      <button type="button" class="notes-toggle" aria-pressed="false">Model notes <kbd>N</kbd></button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#"><img src="assets/logos/logo-fr-50y.svg" alt="Fondation Roi Baudouin" height="52"></a>
+      <ul class="langs"></ul>
+    </div>
+  </header>
+
+  <section class="hero hero--dark">
+    <div class="wrap hero__grid">
+      <div>
+        <h1 data-i18n="h1"></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <p class="note">Reached from the footer of the internal newsletter. Staff are identified by a
+          flag on their Salesforce contact, not by a hard-coded email list.</p>
+      </div>
+      <div class="id-card">
+        <p class="id-card__name">Camille Dupont</p>
+        <p class="id-card__role" data-i18n="role"></p>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="wrap">
+      <div class="col">
+
+        <section class="section" aria-labelledby="internal-title">
+          <div class="section__head">
+            <h2 id="internal-title" data-i18n="internalTitle"></h2>
+          </div>
+          <ul class="topics">
+            <li class="topic topic--locked is-on" style="--c: var(--teal-7)">
+              <div class="topic__label">
+                <span>
+                  <span class="topic__title" data-i18n="internalLabel"></span>
+                  <span class="topic__desc" data-i18n="internalDesc"></span>
+                </span>
+                <span class="lock-text" data-i18n="always"></span>
+              </div>
+            </li>
+          </ul>
+          <div class="subhead"><h3 data-i18n="internalLang"></h3></div>
+          <ul class="pills" id="internal-lang"></ul>
+          <p class="note">Service communication to employees. Proposal: no opt-out, legal basis employment
+            relationship. To confirm with KBF.</p>
+        </section>
+
+        <section class="section" aria-labelledby="copies-title">
+          <div class="section__head">
+            <h2 id="copies-title" data-i18n="copiesTitle"></h2>
+            <p data-i18n="copiesHelp"></p>
+          </div>
+          <ul class="topics" id="copies"></ul>
+          <div class="subhead"><h3 data-i18n="copiesLangs"></h3></div>
+          <ul class="pills" id="copy-langs"></ul>
+          <p class="note">Replaces the five and ten hard-coded addresses in the <code>COM-team</code> and
+            <code>All communication</code> queries. Shown only to contacts with a flag such as
+            <code>C_Newsletter_Internal_Copy__c</code>, ticked by the Communication team in Salesforce.
+            The copies follow the same send as the real audience, so they show exactly what people receive.</p>
+        </section>
+
+        <section class="section">
+          <div class="panel panel--split">
+            <div>
+              <h3 data-i18n="personalTitle"></h3>
+              <p data-i18n="personalBody"></p>
+            </div>
+            <a class="btn btn--ghost" href="newsletter.html" data-keep-lang data-i18n="personalBtn"></a>
+          </div>
+          <p class="note">Public e-news follow the same consent rules as for any subscriber: explicit opt-in,
+            purpose Newsletters.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <strong data-i18n="org"></strong>
+        <span data-i18n="address"></span>
+      </div>
+      <ul>
+        <li><a href="#" data-i18n="privacy"></a></li>
+        <li><a href="#" data-i18n="contact"></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/pc.js"></script>
+  <script src="assets/staff.js"></script>
+</body>
+</html>

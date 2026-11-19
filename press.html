@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Mijn persberichten | Koning Boudewijnstichting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Taviraj:wght@300;400&display=swap">
+  <link rel="stylesheet" href="assets/pc.css">
+</head>
+<body>
+
+  <div class="presenter">
+    <div class="wrap">
+      <div class="presenter__left">
+        <span class="presenter__flag" data-i18n="mockup"></span>
+        <a href="index.html" data-home data-i18n="allMockups"></a>
+      </div>
+      <button type="button" class="notes-toggle" aria-pressed="false">Model notes <kbd>N</kbd></button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#"><img src="assets/logos/logo-nl-50y.svg" alt="Koning Boudewijnstichting" height="52"></a>
+      <ul class="langs"></ul>
+    </div>
+  </header>
+
+  <section class="hero hero--navy">
+    <div class="wrap hero__grid">
+      <div>
+        <h1 data-i18n="h1"></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <p class="note">Purpose <em>Press relations</em>, legal basis legitimate interest (to confirm with KBF's DPO).
+          No opt-in needed, but an objection stops every press mailing. 76% of press contacts have no
+          subscription event today, which is fine under this basis.</p>
+      </div>
+      <div class="id-card">
+        <p class="id-card__name">Lotte Peeters</p>
+        <p class="id-card__role" data-i18n="role"></p>
+        <dl>
+          <div>
+            <dt data-i18n="email"></dt>
+            <dd>lotte.peeters@example.be</dd>
+          </div>
+          <div>
+            <dt data-i18n="since"></dt>
+            <dd id="since"></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="wrap">
+      <div class="col">
+
+        <section class="section">
+          <div class="panel why">
+            <h3 data-i18n="whyTitle"></h3>
+            <p data-i18n="whyBody"></p>
+          </div>
+        </section>
+
+        <div class="status" id="stopped" tabindex="-1" hidden>
+          <div>
+            <strong data-i18n="stoppedTitle"></strong>
+            <p data-i18n="stoppedHelp"></p>
+          </div>
+          <button type="button" class="btn" id="resume-btn" data-i18n="resumeBtn"></button>
+        </div>
+
+        <fieldset id="prefs">
+          <section class="section" aria-labelledby="langs-title">
+            <div class="section__head">
+              <h2 id="langs-title" data-i18n="langsTitle"></h2>
+              <p data-i18n="langsHelp"></p>
+            </div>
+            <ul class="pills" id="press-langs"></ul>
+            <p class="note">Press tags are assigned per language today (<code>fr_FR</code>, <code>nl_BE</code>,
+              <code>en_GB</code>, <code>de_DE</code>). The press footer currently sends <code>language=en</code>
+              for most contacts: 80 of 95 press opt-outs are recorded in English.</p>
+          </section>
+
+          <section class="section" id="topics" aria-labelledby="topics-title">
+            <div class="section__head">
+              <h2 id="topics-title" data-i18n="topicsTitle"></h2>
+              <p data-i18n="topicsHelp"></p>
+            </div>
+            <div class="subhead">
+              <h3 data-i18n="subjects"></h3>
+              <span class="count" id="subjects-count"></span>
+            </div>
+            <ul class="pills pills--small" id="subjects"></ul>
+            <div class="subhead">
+              <h3 data-i18n="regions"></h3>
+              <span class="count" id="regions-count"></span>
+            </div>
+            <ul class="pills pills--small" id="regions"></ul>
+            <p class="note">One chip per press tag (<code>Assigned_Press_Tag__c</code>, 53 tags with a DE per
+              language). In the target model each tag is a Comm Subscription under the purpose Press relations.
+              Internal tags (VIP, My visibility, Test…) are not shown to journalists.</p>
+          </section>
+        </fieldset>
+
+        <section class="section">
+          <div class="panel panel--split">
+            <div>
+              <h3 data-i18n="newsTitle"></h3>
+              <p data-i18n="newsBody"></p>
+            </div>
+            <a class="btn btn--ghost" href="newsletter.html" data-keep-lang data-i18n="newsBtn"></a>
+          </div>
+          <p class="note">Newsletters need an explicit opt-in (consent). Nothing is pre-ticked here: the button
+            leads to the e-news page, where the journalist chooses.</p>
+        </section>
+
+        <section class="section" id="stop">
+          <div class="panel panel--split">
+            <div>
+              <h3 data-i18n="stopTitle"></h3>
+              <p data-i18n="stopBody"></p>
+            </div>
+            <button type="button" class="btn btn--danger" id="stop-btn" data-i18n="stopBtn"></button>
+          </div>
+          <p class="note">Sets Contact Point Type Consent <em>Press relations</em> to OptOut, and the 212 press
+            queries exclude it. Today they read only the tags: on 16 October, 94 of the 95 opted-out press
+            contacts were still in the press DEs and kept receiving press releases.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <strong data-i18n="org"></strong>
+        <span data-i18n="address"></span>
+      </div>
+      <ul>
+        <li><a href="#" data-i18n="privacy"></a></li>
+        <li><a href="#" data-i18n="contact"></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/pc.js"></script>
+  <script src="assets/press.js"></script>
+</body>
+</html>
